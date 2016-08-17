@@ -1,0 +1,49 @@
+package practice2;
+import java.util.Collections;
+import java.util.TreeMap;
+import java.util.Set;
+import java.util.Map.Entry;
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class FinalCompetition {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		HashMap<Float,String> competitor = new HashMap<Float,String>();
+		
+		competitor.put(new Float(28.68),"Riad");
+		competitor.put(new Float(38.5),"Arin");
+		competitor.put(new Float(47.2),"Rima");
+		competitor.put(new Float(34.4),"Maruf");
+		competitor.put(new Float(28.40),"Ether");
+		competitor.put(new Float(40.68),"Masud");
+		
+		System.out.println("Values of HashMap:" + competitor.values());
+		System.out.println("Values of HashMap:" + competitor.keySet());
+		
+		
+		TreeMap<Float,String> sortedCompetitor = new TreeMap<>(competitor);
+		
+		System.out.println("Competitors are:" + sortedCompetitor);
+		System.out.println("Sorted Keys are:" + sortedCompetitor.keySet());
+		
+		System.out.println("Goldmedelist Competitor :" +sortedCompetitor.firstKey() + ",and the name is:" + sortedCompetitor.get(new Float(28.40)));
+
+		Float secondkey = sortedCompetitor.higherKey(sortedCompetitor.higherKey(sortedCompetitor.firstKey()));
+		Float thirdkey = sortedCompetitor.higherKey(sortedCompetitor.higherKey(sortedCompetitor.higherKey(sortedCompetitor.firstKey())));
+
+		System.out.println("Silver Medelist is :" + secondkey + ",and the name is:" +  sortedCompetitor.get(new Float(28.68)));
+		System.out.println("Bronze Medelist is :" + thirdkey + ",and the name is:" +  sortedCompetitor.get(new Float(34.4)));
+
+
+		
+
+
+	}
+
+}
